@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+  <div class="col-md-6 text-center">
+
+    <div class="mb-2 mt-2">
+      <a href="#/" class="btn btn-primary">Back to search</a>
+    </div>
+    Current weather for
+    <br>
+    <h4>{{ city }}</h4>
+    <hr>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-md-5 text-center">
+
+    <div class="card mt-2">
+      <div class="card-header">
+        Date
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ converToDate(weatherResult.dt) |date: 'MMM d ,y hh:mm a' :'+0800' }}</li>
+      </ul>
+    </div>
+
+    <div class="card mt-2">
+      <div class="card-header">
+        Weather
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          {{ weatherResult.weather[0].main }}
+          <br>
+          <small>{{ weatherResult.weather[0].description }}</small>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card mt-2 mb-4">
+      <div class="card-header">
+        Daytime temperature
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Temperature: {{ weatherResult.main.temp }}</li>
+        <li class="list-group-item">Feels like: {{ weatherResult.main.feels_like }}</li>
+        <li class="list-group-item">Lowest: {{ weatherResult.main.temp_min }}</li>
+        <li class="list-group-item">Highest {{ weatherResult.main.temp_max }}</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
